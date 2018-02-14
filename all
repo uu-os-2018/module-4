@@ -1,0 +1,4 @@
+for dir in `ls -F | grep /`
+do
+    (cd $dir && pwd && ${@:1})
+done
