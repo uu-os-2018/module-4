@@ -97,7 +97,7 @@ dec_tas_spinlock(void *arg __attribute__((unused)))
     /* TODO 2: Add the spin_lock() and spin_unlock() operations */
 
     for (i = 0; i < DEC_ITERATIONS; i++) {
-        counter += DECREMENT; 
+        counter -= DECREMENT; 
     }
 
     return NULL;
