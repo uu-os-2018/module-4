@@ -6,11 +6,6 @@ typedef sem_t semaphore_t;
 
 #ifdef __APPLE__
 
-#include <stdio.h>	// L_tmpnam
-#include <stdlib.h>	// malloc()
-
-#define MAX_NAME_LEN L_tmpnam
-
 typedef struct {
   char *name;
   sem_t *sem;

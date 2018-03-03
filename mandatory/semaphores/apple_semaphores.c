@@ -1,5 +1,7 @@
 #include <unistd.h> // mkstemp()
 #include <string.h> // strcpy()
+#include <stdio.h>  // perror()
+#include <stdlib.h> // malloc()
 
 #include "semaphores.h"
 
