@@ -6,7 +6,6 @@ PREFIX   := UNDEFINED
 
 ifeq ($(PLATFORM), Darwin)
 	PREFIX := apple
-	CFLAGS += -Wno-deprecated-declarations
 endif
 
 ifeq ($(PLATFORM), Linux)
