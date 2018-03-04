@@ -1,7 +1,9 @@
 #include <unistd.h> // mkstemp()
 #include <string.h> // strcpy()
-#include <stdio.h>  // perror()
-#include <stdlib.h> // malloc()
+#include <stdio.h>	// perror()
+#include <stdlib.h>	// malloc()
+
+
 
 #include "semaphores.h"
 
@@ -14,10 +16,16 @@
 void cleanup(semaphore_t *sem) {
   if (sem_close(sem->sem) == -1) {
     perror("sem_close()");
+    abort();
   }
+
   if (sem_unlink(sem->name) == -1) {
     perror("sem_unlink()");
+    abort();
   }
+
+  free(sem->name);
+  free(sem);
 }
 
 void perror_and_abort(semaphore_t *sem, const char* msg) {

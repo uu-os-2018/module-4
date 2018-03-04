@@ -33,4 +33,6 @@ int main(void) {
    printf("  main(%d)     semaphore signaled by thread.\n", i);
  }
 
+ s_destroy(sem);
+
 }

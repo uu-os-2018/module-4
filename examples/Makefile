@@ -16,7 +16,7 @@ ifeq ($(OS), Linux)
 endif
 
 
-PTHREADS := balance hello_pthreads pthreads_and_fork pthreads_create_exit_null_join pthreads_unsynchronized_concurrency
+PTHREADS := balance hello_pthreads pthreads_and_fork pthreads_create_exit_null_join pthreads_unsynchronized_concurrency 
 NORMAL	 := callbacks timer
 UCONTEXT := contexts
 
@@ -35,7 +35,7 @@ $(UCONTEXT_TARGETS): CFLAGS += -Wno-deprecated-declarations
 
 # On Mac OS (aka OS X) optimizations of loops with no side effects will give
 # strange results, see  https://stackoverflow.com/questions/48835657/why-does-empty-loop-cause-bus-error-when-compiling-c-program-with-clang-o2-on?noredirect=1#comment84676117_48835657
-NO_OPT_TARGETS := $(UCONTEXT_TARGETS) bin/segfault bin/timer
+NO_OPT_TARGETS := $(UCONTEXT_TARGETS)  bin/timer
 $(NO_OPT_TARGETS): CFLAGS := $(filter-out -O2, $(CFLAGS))
 
 .PHONY: all clean 
